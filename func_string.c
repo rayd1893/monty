@@ -22,7 +22,6 @@ int _strlen(char *s)
  * _strncat - Concatenate strings
  * @dest: First string
  * @src: Second string
- * @n: bytes
  *
  * Return: Concatenation
  */

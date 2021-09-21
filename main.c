@@ -1,6 +1,13 @@
 #include "monty.h"
 
-int main (int argc, char **argv)
+/**
+ * main - Main function
+ * @argc: Number of arguments
+ * @argv: List of arguments
+ *
+ * Return: 0
+ */
+int main(int argc, char **argv)
 {
 	char ch;
 	char raiz[98] = "./";
@@ -19,7 +26,7 @@ int main (int argc, char **argv)
 
 	printf("The contents of %s file are:\n", file_name);
 
-	while((ch = fgetc(fp)) != EOF)
+	while ((ch = fgetc(fp)) != EOF)
 		printf("%c", ch);
 
 	fclose(fp);
