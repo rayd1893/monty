@@ -35,4 +35,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/*fun_string.c*/
+int _strlen(char *s);
+char *_strncat(char *dest, char *src);
+
 #endif
