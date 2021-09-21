@@ -1,27 +1,43 @@
 #include "monty.h"
+
 /**
+ * _strlen - Return string of length
+ * @s: String
  *
+ * Return: string of length
  */
-char *_strconcat(char *str1, char *str2)
+int _strlen(char *s)
 {
-	char *str_result;
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+
+	}
+
+	return (i);
+}
+
+/**
+ * _strncat - Concatenate strings
+ * @dest: First string
+ * @src: Second string
+ * @n: bytes
+ *
+ * Return: Concatenation
+ */
+char *_strncat(char *dest, char *src)
+{
+	int l = _strlen(dest);
 	int i = 0;
 
-	while (*str1)
+	while (*src)
 	{
-		str_result[i] = *str1;
+		dest[l + i] = *src;
+		src++;
 		i++;
-		str1++;
 	}
 
-	while (*str2)
-	{
-		str_result[i] = *str2;
-		i++;
-		str2++;
-	}
-
-	str_result[i] = '\0';
-
-	return(str_result);
+	dest[i + l] = '\0';
+	return (dest);
 }

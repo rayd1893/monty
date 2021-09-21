@@ -3,11 +3,12 @@
 int main (int argc, char **argv)
 {
 	char ch;
+	char raiz[98] = "./";
 	char *file_name;
 	FILE *fp;
 	(void)argc;
 
-	file_name = "./bytecodes/00.m";
+	file_name = _strncat(raiz, argv[1]);
 
 	fp = fopen(file_name, "r");
 	if (fp == NULL)
@@ -22,5 +23,5 @@ int main (int argc, char **argv)
 		printf("%c", ch);
 
 	fclose(fp);
-	return 0;
+	return (0);
 }
