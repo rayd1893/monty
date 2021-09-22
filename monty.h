@@ -1,9 +1,14 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,5 +43,6 @@ typedef struct instruction_s
 /*fun_string.c*/
 int _strlen(char *s);
 char *_strncat(char *dest, char *src);
+int main(int argc, char **argv);
 
 #endif
