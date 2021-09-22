@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	fp = fopen(file_name, "r");
 	if (fp == NULL)
 	{
-		perror("Error while opening the file.\n");
+		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
