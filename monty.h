@@ -10,6 +10,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+int x;
+unsigned int lnum;
+char *args;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
