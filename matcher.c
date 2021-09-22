@@ -14,6 +14,7 @@ void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 	int i;
+	unsigned int line_number = lnum;
 
 	for (i = 0; i < 2; i++)
 	{
@@ -22,6 +23,6 @@ void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number)
 			return (instructions[i].f);
 		}
 	}
-
+	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, opcode);
 	return (NULL);
 }
