@@ -3,6 +3,7 @@
 /**
  * nopen - Prints error if file doesn't open
  * @fp: file
+ * @str: name of file
  *
  * Return: 0
  */
