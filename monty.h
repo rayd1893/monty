@@ -48,7 +48,7 @@ typedef struct instruction_s
 int _strlen(char *s);
 char *_strncat(char *dest, char *src);
 
-void nopen(FILE *fp, char *str); 
+void nopen(FILE *fp, char *str);
 int main(int argc, char **argv);
 
 /* matcher.c */
