@@ -38,7 +38,6 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	*stack = mem;
 	x = NULL;
-	free_stack(mem);
 
 }
 
@@ -70,22 +69,23 @@ void pall(stack_t **stack, unsigned int line_number)
 void pop(stack_t **stack, unsigned int line_number)
 {
 
-    stack_t *tmp;
+	stack_t *tmp;
+	unsigned int ln = line_number;
 
-    if (*stack == NULL || stack == NULL)
-    {
-        dprintf(STDERR_FILENO, "L%d: can't pop an empty stack", line_number);
-        exit(EXIT_FAILURE);
-    }
-    tmp = *stack;
+	if (*stack == NULL || stack == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", ln);
+		exit(EXIT_FAILURE);
+	}
 
+	tmp = *stack;
 	*stack = (*stack)->next;
 
 	if (*stack)
 		(*stack)->prev = NULL;
 
-    free(tmp);
-    tmp = NULL;
+	free(tmp);
+	tmp = NULL;
 }
 
 /**
@@ -118,6 +118,6 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
-    (void)stack;
-    (void)line_number;
+	(void)stack;
+	(void)line_number;
 }
