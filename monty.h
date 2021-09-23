@@ -1,11 +1,19 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-/* Global variable  */
-int parameter;
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int x;
+unsigned int lnum;
+char *args;
+>>>>>>> f5a8e749bd6791d1232ca0647e0ae00dea950643
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,6 +48,7 @@ typedef struct instruction_s
 /* fun_string.c */
 int _strlen(char *s);
 char *_strncat(char *dest, char *src);
+int main(int argc, char **argv);
 
 /* matcher.c */
 void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number);
