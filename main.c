@@ -20,7 +20,6 @@ int main(int argc, char **argv)
 	char *token, *cmd;
 
 	lnum = 1;
-
 	if ((argc != 2) || (*(argv[1] + strlen(argv[1]) - 2) != '.'))
 	{
 		fputs("USAGE: monty file\n", stderr);
