@@ -21,9 +21,9 @@ void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 	int i;
-	unsigned int line_number = lnum;
+	unsigned int line_number = global.lnum;
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)
 		{

@@ -10,9 +10,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-char* x;
-unsigned int lnum;
-char *args;
+typedef struct globals
+{
+	char *args;
+	unsigned int lnum;
+} g_t;
+
+g_t global;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -47,6 +51,7 @@ typedef struct instruction_s
 /* fun_string.c */
 int _strlen(char *s);
 char *_strncat(char *dest, char *src);
+int _isdigit(char *str);
 
 void nopen(FILE *fp, char *str);
 int main(int argc, char **argv);

@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	FILE *fp;
 	char *token, *cmd;
 
-	lnum = 1;
+	global.lnum = 1;
 	if ((argc != 2) || (*(argv[1] + strlen(argv[1]) - 2) != '.'))
 	{
 		fputs("USAGE: monty file\n", stderr);
@@ -52,12 +52,10 @@ int main(int argc, char **argv)
 		if (cmd != NULL && cmd[0] != '#')
 		{
 			token = strtok(NULL, " \t\n");
-			args = token;
-			if (args)
-				x = args;
-			matcher(cmd)(&stack, lnum);
+			global.args = token;
+			matcher(cmd)(&stack, global.lnum);
 		}
-		lnum++;
+		global.lnum++;
 	}
 	fclose(fp);
 	free_stack(stack);
