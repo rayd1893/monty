@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 			token = strtok(NULL, " \t\n");
 			args = token;
 			if (args)
-				x = atoi(args);
+				x = args;
 			matcher(cmd)(&stack, lnum);
 		}
 		lnum++;
