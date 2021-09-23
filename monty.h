@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-char* x;
+int x;
 unsigned int lnum;
 char *args;
 
