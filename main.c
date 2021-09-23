@@ -1,6 +1,21 @@
 #include "monty.h"
 
 /**
+ * nopen - Prints error if file doesn't open
+ * @fp: file
+ *
+ * Return: 0
+ */
+
+void nopen(FILE *fp, char *str)
+{
+	if (fp == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", str);
+		exit(EXIT_FAILURE);
+	}
+}
+/**
  * main - Main function
  * @argc: Number of arguments
  * @argv: List of arguments
@@ -27,11 +42,7 @@ int main(int argc, char **argv)
 	}
 	file_name = _strncat(raiz, argv[1]);
 	fp = fopen(file_name, "r");
-	if (fp == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	nopen(fp, argv[1]);
 	while ((line_size = getline(&line, &len, fp)) != EOF)
 	{
 		line[line_size - 1] = '\0';
