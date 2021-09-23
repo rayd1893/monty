@@ -12,7 +12,13 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *mem;
 	(void) line_number;
 
-	if (x == 0 && *args != '0')
+	if (x == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lnum);
+		exit(EXIT_FAILURE);
+	}
+
+	if (atoi(x) == 0 && *args != '0')
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lnum);
 		exit(EXIT_FAILURE);
@@ -23,7 +29,7 @@ void push(stack_t **stack, unsigned int line_number)
 		fputs("Error: malloc failed\n", stderr);
 		exit(EXIT_FAILURE);
 	}
-	mem->n = x;
+	mem->n = atoi(x);
 	mem->next = *stack;
 	mem->prev = NULL;
 	if (*stack != NULL)
@@ -31,6 +37,7 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = mem;
 	}
 	*stack = mem;
+	x = NULL;
 }
 
 /**
