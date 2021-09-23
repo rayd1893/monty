@@ -59,3 +59,65 @@ void pall(stack_t **stack, unsigned int line_number)
 		(*stack) = (*stack)->next;
 	}
 }
+
+/**
+ * pop - Removes the top element of the stack
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: Nothing
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+
+    stack_t *tmp;
+
+    if (*stack == NULL || stack == NULL)
+    {
+        dprintf(STDERR_FILENO, "L%d: can't pop an empty stack", line_number);
+        exit(EXIT_FAILURE);
+    }
+    tmp = *stack;
+
+	*stack = (*stack)->next;
+
+	if (*stack)
+		(*stack)->prev = NULL;
+
+    free(tmp);
+    tmp = NULL;
+}
+
+/**
+ * pint - Prints the value at the top of the stack, followed by a new line
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: nothing
+ */
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack)
+	{
+		printf("%d\n", (*stack)->n);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+ * nop - Doesn’t do anything.
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: Nothing
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+    (void)stack;
+    (void)line_number;
+}
