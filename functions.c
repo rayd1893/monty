@@ -38,6 +38,8 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	*stack = mem;
 	x = NULL;
+	free_stack(mem);
+
 }
 
 /**
