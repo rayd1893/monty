@@ -50,12 +50,14 @@ void push(stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number;
+	stack_t *mem;
 
-	while (*stack)
+	mem = *stack;
+	if (line_number)
+	while (mem)
 	{
-		printf("%d\n", (*stack)->n);
-		(*stack) = (*stack)->next;
+		printf("%d\n", mem->n);
+		mem = mem->next;
 	}
 }
 
@@ -68,7 +70,6 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-
 	stack_t *tmp;
 	unsigned int ln = line_number;
 
@@ -80,10 +81,8 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 	*stack = (*stack)->next;
-
 	if (*stack)
 		(*stack)->prev = NULL;
-
 	free(tmp);
 	tmp = NULL;
 }
@@ -118,6 +117,9 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+
+	if (*stack)
+		{};
+	if (line_number)
+		{};
 }
