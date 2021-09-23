@@ -12,7 +12,6 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *mem;
 	(void) line_number;
 
-
 	if (x == 0 && *args != '0')
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lnum);
@@ -32,7 +31,6 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = mem;
 	}
 	*stack = mem;
-	x = 0;
 }
 
 /**
