@@ -59,5 +59,5 @@ int main(int argc, char **argv)
 	}
 	fclose(fp);
 	free_stack(stack);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
