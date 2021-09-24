@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (atoi(global.args) == 0 && _isdigit(global.args) == 0)
+	if (global.args == NULL || _isdigit(global.args) == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
