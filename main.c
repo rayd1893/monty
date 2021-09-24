@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	int line_size = 0;
 	char raiz[98] = "./";
 	char *file_name;
-        char *token, *cmd;
+	char *token, *cmd;
 
 	global.lnum = 1;
 	if ((argc != 2))

@@ -14,11 +14,13 @@ void push(stack_t **stack, unsigned int line_number)
 	if (global.args == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if (global.args == NULL || _isdigit(global.args) == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	mem = malloc(sizeof(stack_t));
