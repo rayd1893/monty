@@ -97,7 +97,7 @@ void mul(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - Divides the second top element of the stack
+ * divi - Divides the second top element of the stack
  * sub - Substract the second top element of the stack
  * with the top element of the stack
  * @stack: Linked list
