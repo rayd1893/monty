@@ -16,6 +16,8 @@ void nopen(FILE *fp, char *str)
 		exit(EXIT_FAILURE);
 	}
 }
+
+
 /**
  * main - Main function
  * @argc: Number of arguments
@@ -32,8 +34,7 @@ int main(int argc, char **argv)
 	int line_size = 0;
 	char raiz[98] = "./";
 	char *file_name;
-	FILE *fp;
-	char *token, *cmd;
+        char *token, *cmd;
 
 	global.lnum = 1;
 	if ((argc != 2))
@@ -42,9 +43,9 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	file_name = _strncat(raiz, argv[1]);
-	fp = fopen(file_name, "r");
-	nopen(fp, argv[1]);
-	while ((line_size = getline(&line, &len, fp)) != EOF)
+	global.fp = fopen(file_name, "r");
+	nopen(global.fp, argv[1]);
+	while ((line_size = getline(&line, &len, global.fp)) != EOF)
 	{
 		line[line_size - 1] = '\0';
 		token = strtok(line, " \t\n");
@@ -57,7 +58,8 @@ int main(int argc, char **argv)
 		}
 		global.lnum++;
 	}
-	fclose(fp);
 	free_stack(stack);
+	free(line);
+	fclose(global.fp);
 	exit(EXIT_SUCCESS);
 }

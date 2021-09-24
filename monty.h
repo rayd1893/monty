@@ -10,21 +10,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-/**
- * struct globals - variables used in many functions
- * @args: argument
- * @lnum: line number
- *
- * Description: variables
- */
-
-typedef struct globals
-{
-	char *args;
-	unsigned int lnum;
-} g_t;
-
-extern g_t global;
 
 
 /**
@@ -56,6 +41,26 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct globals - variables used in many functions
+ * @args: argument
+ * @lnum: line number
+ * @fp: File
+ * @stack: Stack
+ *
+ * Description: variables
+ */
+
+typedef struct globals
+{
+	char *args;
+	unsigned int lnum;
+	FILE *fp;
+	stack_t *stack;
+} g_t;
+
+extern g_t global;
 
 g_t global;
 
