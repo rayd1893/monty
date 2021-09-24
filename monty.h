@@ -24,7 +24,8 @@ typedef struct globals
 	unsigned int lnum;
 } g_t;
 
-g_t global;
+extern g_t global;
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -55,6 +56,8 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+g_t global;
 
 /* fun_string.c */
 int _strlen(char *s);
