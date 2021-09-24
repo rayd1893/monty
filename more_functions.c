@@ -63,8 +63,7 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * mul - Multiplies the second top element of the stack
- * with the top element of the stack
+ * mul - Multiplies the second top element of the stack with the top elements
  * @stack: Linked list
  * @line_number: Line number
  *
@@ -91,6 +90,40 @@ void mul(stack_t **stack, unsigned int line_number)
 	else
 	{
 		dprintf(2, "L%u: can't mul, stack too short\n", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+ * sub - Substract the second top element of the stack
+ * with the top element of the stack
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: Nothing
+ */
+
+void sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *mem;
+	int n1, n2, sub;
+
+	if (*stack && (*stack)->next)
+	{
+		n1 = (*stack)->n;
+		n2 = ((*stack)->next)->n;
+		sub = n2 - n1;
+		mem = (*stack)->next;
+		mem->n = mult;
+		mem->prev = NULL;
+		mem->next = ((*stack)->next)->next;
+		(*stack)->prev = mem;
+		*stack = mem;
+	}
+	else
+	{
+		dprintf(2, "L%u: can't sub, stack too short\n", line_number);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
