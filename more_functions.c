@@ -115,7 +115,7 @@ void sub(stack_t **stack, unsigned int line_number)
 		n2 = ((*stack)->next)->n;
 		sub = n2 - n1;
 		mem = (*stack)->next;
-		mem->n = mult;
+		mem->n = sub;
 		mem->prev = NULL;
 		mem->next = ((*stack)->next)->next;
 		(*stack)->prev = mem;
