@@ -53,7 +53,6 @@ void add(stack_t **stack, unsigned int line_number)
 		mem->next = ((*stack)->next)->next;
 		(*stack)->prev = mem;
 		*stack = mem;
-		free(mem);
 	}
 	else
 	{
