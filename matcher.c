@@ -19,7 +19,7 @@ void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"mul", mul},
 		{"sub", sub},
 		{"div", divi},
-		{"mod", divi},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	int i;
