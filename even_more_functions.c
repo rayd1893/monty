@@ -67,3 +67,24 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", mem->n);
 }
+
+/**
+ * pstr - Prints the string starting at the top of the stack
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: Nothing
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *mem;
+
+	mem = *stack;
+	if (line_number)
+	while (mem)
+	{
+		printf("%c", mem->n);
+		mem = mem->next;
+	}
+	printf("\n");
+}
