@@ -150,19 +150,20 @@ void divi(stack_t **stack, unsigned int line_number)
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *mem;
+	stack_t *pre;
 	int n1, n2, sub;
 
 	if (*stack && (*stack)->next)
 	{
+		pre = *stack;
 		n1 = (*stack)->n;
 		n2 = ((*stack)->next)->n;
 		sub = n2 - n1;
 		mem = (*stack)->next;
 		mem->n = sub;
 		mem->prev = NULL;
-		mem->next = ((*stack)->next)->next;
-		(*stack)->prev = mem;
 		*stack = mem;
+		free(pre);
 	}
 	else
 	{
