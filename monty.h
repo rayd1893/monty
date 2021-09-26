@@ -82,11 +82,15 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
+/* more_functions.c */
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void divi(stack_t **stack, unsigned int line_number);
+
+/* even_more_functions.c */
+void mod(stack_t **stack, unsigned int line_number);
 
 /* free.c */
 void free_stack(stack_t *head);
