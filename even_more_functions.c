@@ -39,3 +39,31 @@ void mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * pchar - Prints the char at the top of the stack, followed by a new line
+ * @stack: Linked list
+ * @line_number: Line number
+ *
+ * Return: Nothing
+ */
+
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	stack_t *mem;
+
+	mem = *stack;
+	if (mem == NULL)
+	{
+		free_stack(*stack);
+		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (mem->n >= 128 || mem->n < 0)
+	{
+		free_stack(*stack);
+		dprintf(2, "L%d: can't pchar, value out of range\n", num_linea);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", mem->n);
+}
