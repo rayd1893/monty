@@ -92,6 +92,7 @@ void divi(stack_t **stack, unsigned int line_number);
 /* even_more_functions.c */
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 /* free.c */
 void free_stack(stack_t *head);
