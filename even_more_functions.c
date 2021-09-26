@@ -62,7 +62,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if (mem->n >= 128 || mem->n < 0)
 	{
 		free_stack(*stack);
-		dprintf(2, "L%d: can't pchar, value out of range\n", num_linea);
+		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", mem->n);
