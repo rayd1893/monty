@@ -34,7 +34,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		dprintf(2, "L%u: can't div, stack too short\n", line_number);
+		dprintf(2, "L%u: can't mod, stack too short\n", line_number);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
