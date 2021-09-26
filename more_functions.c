@@ -75,19 +75,20 @@ void add(stack_t **stack, unsigned int line_number)
 void mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *mem;
+	stack_t *pre;
 	int n1, n2, mult;
 
 	if (*stack && (*stack)->next)
 	{
+		pre = *stack;
 		n1 = (*stack)->n;
 		n2 = ((*stack)->next)->n;
 		mult = n1 * n2;
 		mem = (*stack)->next;
 		mem->n = mult;
 		mem->prev = NULL;
-		mem->next = ((*stack)->next)->next;
-		(*stack)->prev = mem;
 		*stack = mem;
+		free(pre);
 	}
 	else
 	{
