@@ -19,12 +19,13 @@ void (*matcher(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"mul", mul},
 		{"sub", sub},
 		{"div", divi},
+		{"mod", divi},
 		{NULL, NULL}
 	};
 	int i;
 	unsigned int line_number = global.lnum;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)
 		{
