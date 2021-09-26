@@ -81,7 +81,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	mem = *stack;
 	if (line_number)
-	while (mem)
+	while (mem && mem->n != 0 && mem->n > 0 && mem->n < 128)
 	{
 		printf("%c", mem->n);
 		mem = mem->next;
