@@ -24,7 +24,7 @@ void mod(stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 		mem2 = (*stack)->next;
-		mod = mem2->n / (*stack)->n;
+		mod = mem2->n % (*stack)->n;
 		mem = *stack;
 		*stack = (*stack)->next;
 		if (*stack)
